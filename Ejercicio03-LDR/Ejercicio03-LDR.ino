@@ -25,10 +25,13 @@ void loop() {
 
   lcd.clear();
   lcd.setCursor(0, 0);
+  lcd.print("valor: ");
+  lcd.print(sensorValue);
+
+  lcd.setCursor(0, 1);
   lcd.print("Max: ");
   lcd.print(maximo);
-  lcd.setCursor(0, 1);
-  lcd.print("Min:");
+  lcd.print(" Min:");
   lcd.print(minimo);
   delay(500);
 }
