@@ -3,8 +3,8 @@
 #include <ESP8266WebServer.h>
 
 /* Set these to your desired credentials. */
-const char *ssid = "ESPapNoe";
-const char *password = "password";
+const char *ssid = "ESPapXXXX";
+const char *password = "passwordXXXX";
 
 ESP8266WebServer server(80);
 
@@ -81,10 +81,10 @@ void loop() {
 }
 
 void handleRoot() {
-  String web = "<!DOCTYPE html>\n<html>\n<head><meta http-equiv=\"refresh\" content=\"1\" /></head>\n";
+  String web = "<!DOCTYPE html>\n<html>\n<head><meta http-equiv=\"refresh\" content=\"60\" /></head>\n";
   web += "<body>\n";
   web += "<h1>Pulsaciones: </h1>" + String(pulsos_b) + "<h1>Tiempo entre pulsos: </h1>" + String(tiempo_pulsos);
   web += "</body>\n</html>\n";
   server.send(200, "text/html", web);
-  server.sendHeader("refresh","1");
+  server.sendHeader("refresh","60");
 }
